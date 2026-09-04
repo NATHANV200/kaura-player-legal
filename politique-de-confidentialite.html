@@ -504,7 +504,7 @@
       vos données personnelles, quelles permissions sont utilisées et pourquoi,
       et quels droits vous possédez en tant qu'utilisateur.
     </p>
-    <div class="update-badge">Dernière mise à jour : 22 mai 2026 — Version 1.0</div>
+    <div class="update-badge">Dernière mise à jour : 4 septembre 2026 — Version 2.0</div>
   </header>
 
   <!-- ══ TABLE DES MATIÈRES ══ -->
@@ -522,7 +522,8 @@
       <li><a href="#s9">Droits des utilisateurs</a></li>
       <li><a href="#s10">RGPD — Utilisateurs UE</a></li>
       <li><a href="#s11">Modifications</a></li>
-      <li><a href="#s12">Contact</a></li>
+      <li><a href="#s12">Navigateur, téléchargement et IPTV</a></li>
+      <li><a href="#s13">Contact</a></li>
     </ol>
   </nav>
 
@@ -542,8 +543,14 @@
       Kaura Player est un <strong>lecteur audio et vidéo hors ligne</strong>.
       Sa fonctionnalité principale — lire des fichiers multimédia stockés sur
       votre appareil — ne nécessite <strong>aucune connexion internet et n'implique
-      aucun envoi de données sur nos serveurs</strong>. La connexion internet
-      est uniquement utilisée pour le chargement des publicités via Google AdMob.
+      aucun envoi de données sur nos serveurs</strong>.
+    </p>
+    <p>
+      La connexion internet est utilisée pour le chargement des publicités via
+      Google AdMob, ainsi que pour les fonctionnalités optionnelles de
+      navigateur intégré, de gestionnaire de téléchargement (fichiers directs
+      et torrents) et de lecteur de flux IPTV, détaillées à la section
+      « Navigateur, téléchargement et IPTV » ci-dessous.
     </p>
     <div class="card info">
       <strong style="color:var(--accent3)">Principe général :</strong>
@@ -629,7 +636,54 @@
       </table>
     </div>
 
-    <h3>2.2 Données que nous ne collectons pas</h3>
+    <h3>2.2 Navigateur, téléchargement, IPTV et compte Google (optionnel)</h3>
+    <p>
+      Ces données concernent les fonctionnalités optionnelles de navigateur
+      intégré, de gestionnaire de téléchargement et de lecteur IPTV. Comme
+      pour les données ci-dessus, elles restent <strong>exclusivement locales</strong>
+      et ne sont jamais transmises à nos serveurs.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Donnée</th>
+            <th>Finalité</th>
+            <th>Envoyée sur internet ?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Historique de navigation</td>
+            <td>Confort d'utilisation du navigateur intégré</td>
+            <td><span class="no">Non — locale uniquement</span></td>
+          </tr>
+          <tr>
+            <td>Historique des téléchargements</td>
+            <td>Suivi des fichiers téléchargés par l'utilisateur</td>
+            <td><span class="no">Non — locale uniquement</span></td>
+          </tr>
+          <tr>
+            <td>Playlists IPTV ajoutées (M3U/M3U8)</td>
+            <td>Lecture des flux ajoutés par l'utilisateur</td>
+            <td><span class="no">Non — locale uniquement</span></td>
+          </tr>
+          <tr>
+            <td>Jeton OAuth de compte Google (connexion optionnelle)</td>
+            <td>Fonctionnalités liées au navigateur intégré</td>
+            <td><span class="no">Non — chiffré AES et stocké localement</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Le jeton OAuth Google, s'il est utilisé, est enregistré localement sur
+      votre appareil et chiffré grâce à un chiffrement AES fort. Il est
+      automatiquement supprimé si vous effacez les données de l'application
+      ou la désinstallez.
+    </p>
+
+    <h3>2.3 Données que nous ne collectons pas</h3>
     <p>Kaura Player ne collecte <strong>en aucun cas</strong> les données suivantes :</p>
     <div class="card">
       <p>✗ &nbsp;Votre nom, prénom, email ou numéro de téléphone</p>
@@ -872,6 +926,54 @@
       </li>
     </ul>
 
+    <h3>Réseau local et découverte d'appareils</h3>
+    <ul class="perm-list">
+      <li>
+        <span class="perm-icon">📡</span>
+        <div>
+          <div class="perm-name">Détection d'appareils à proximité</div>
+          <span class="perm-code">NEARBY_WIFI_DEVICES</span>
+          <div class="perm-desc">Permet à l'application de détecter et de se connecter à des appareils sur votre réseau local (ex : fonctionnalités liées au réseau local). Aucune donnée de localisation précise n'est collectée : cette permission concerne uniquement les appareils Wi-Fi à proximité, pas votre position géographique.</div>
+        </div>
+      </li>
+      <li>
+        <span class="perm-icon">📶</span>
+        <div>
+          <div class="perm-name">Réception multicast Wi-Fi</div>
+          <span class="perm-code">CHANGE_WIFI_MULTICAST_STATE</span>
+          <div class="perm-desc">Permet à l'application de recevoir des paquets envoyés à plusieurs appareils du réseau local à la fois, utilisé conjointement avec la détection d'appareils à proximité.</div>
+        </div>
+      </li>
+    </ul>
+
+    <h3>Vérification et sécurité (Google Play)</h3>
+    <ul class="perm-list">
+      <li>
+        <span class="perm-icon">🔑</span>
+        <div>
+          <div class="perm-name">Vérification de licence Google Play</div>
+          <span class="perm-code">com.android.vending.CHECK_LICENSE</span>
+          <div class="perm-desc">Permet de vérifier que l'application a été installée légitimement depuis le Google Play Store, à des fins anti-piratage. Ne collecte aucune donnée personnelle.</div>
+        </div>
+      </li>
+      <li>
+        <span class="perm-icon">📥</span>
+        <div>
+          <div class="perm-name">Source d'installation</div>
+          <span class="perm-code">com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</span>
+          <div class="perm-desc">Permet de récupérer la source d'installation de l'application (ex : recherche Play Store, campagne publicitaire). Cette donnée d'attribution est traitée par Google, pas par nous.</div>
+        </div>
+      </li>
+      <li>
+        <span class="perm-icon">🛡️</span>
+        <div>
+          <div class="perm-name">Attestation publicitaire</div>
+          <span class="perm-code">com.amazon.privacypass.ATTEST</span>
+          <div class="perm-desc">Permission liée aux SDK publicitaires utilisés par l'application (mesures anti-fraude côté annonceurs). Ne collecte aucune donnée personnelle identifiable de votre part.</div>
+        </div>
+      </li>
+    </ul>
+
     <div class="card warning">
       <strong style="color:#fbbf24">Note sur les permissions spéciales :</strong>
       <p style="margin-top:8px;">
@@ -1003,6 +1105,9 @@
     <div class="card">
       <p>🛡️ &nbsp;<strong style="color:var(--heading)">Chiffrement en transit :</strong> Les communications avec Google AdMob sont chiffrées via HTTPS/TLS.</p>
     </div>
+    <div class="card">
+      <p>🔐 &nbsp;<strong style="color:var(--heading)">Jeton OAuth chiffré :</strong> Le jeton de connexion optionnelle à un compte Google (navigateur intégré) est chiffré en AES fort et stocké uniquement en local.</p>
+    </div>
     <p style="margin-top:20px;">
       Aucun système de sécurité n'est infaillible. En cas de découverte d'une
       faille de sécurité, contactez-nous immédiatement à
@@ -1035,6 +1140,13 @@
       enfant nous a fourni des données personnelles, contactez-nous immédiatement
       à <a href="mailto:kauraplayersupport@gmail.com">kauraplayersupport@gmail.com</a>.
       Nous prendrons les mesures nécessaires pour supprimer ces informations.
+    </p>
+    <p>
+      Les fonctionnalités de navigateur intégré, de gestionnaire de
+      téléchargement et de lecteur IPTV donnent accès à des contenus non
+      contrôlés par l'éditeur et <strong>ne sont pas recommandées aux
+      mineurs</strong>. Il appartient aux parents ou tuteurs légaux de
+      superviser leur usage.
     </p>
   </section>
 
@@ -1161,6 +1273,56 @@
   <section id="s12">
     <div class="section-header">
       <span class="section-num">12</span>
+      <h2>Navigateur, téléchargement et IPTV</h2>
+    </div>
+    <p>
+      Kaura Player propose un navigateur web intégré, un gestionnaire de
+      téléchargement (fichiers directs et torrents) et un lecteur de flux
+      IPTV. Cette section décrit le traitement des données lié à ces
+      fonctionnalités.
+    </p>
+
+    <div class="card info">
+      <strong style="color:var(--accent3)">Tout reste local :</strong>
+      <p style="margin-top:8px;">
+        L'historique de navigation, les téléchargements et les playlists
+        IPTV ajoutées par l'utilisateur ne sont jamais transmis à nos
+        serveurs. Voir la section « Données collectées » pour le détail.
+      </p>
+    </div>
+
+    <h3>12.1 Torrent et adresse IP</h3>
+    <p>
+      Le fonctionnement même du protocole torrent implique un échange direct
+      avec d'autres utilisateurs (pairs) du réseau. <strong>Lorsque vous
+      utilisez la fonction torrent, votre adresse IP est visible par les
+      autres pairs</strong> avec lesquels votre appareil échange des données,
+      indépendamment de Kaura Player. Nous n'avons aucun contrôle sur cette
+      exposition, inhérente au fonctionnement du protocole lui-même.
+    </p>
+
+    <h3>12.2 Sites et flux tiers</h3>
+    <p>
+      Lorsque vous naviguez via le navigateur intégré ou accédez à un flux
+      IPTV que vous avez ajouté, votre appareil communique directement avec
+      les sites ou serveurs tiers concernés. Ces échanges (adresse IP,
+      requêtes) sont hors du contrôle de Kaura Player et soumis à la
+      politique de confidentialité propre à chaque site ou service visité.
+    </p>
+
+    <h3>12.3 Aucune liste ni contenu fourni</h3>
+    <p>
+      Kaura Player ne fournit, n'héberge et ne recommande aucun flux IPTV,
+      aucune chaîne ni aucun contenu à télécharger. L'utilisateur ajoute et
+      choisit lui-même ses sources, sous sa seule responsabilité. Le partage
+      ou l'exportation de flux IPTV depuis l'application n'est pas proposé.
+    </p>
+  </section>
+
+  <!-- ══ SECTION 13 ══ -->
+  <section id="s13">
+    <div class="section-header">
+      <span class="section-num">13</span>
       <h2>Contact</h2>
     </div>
     <div class="card accent-border">
